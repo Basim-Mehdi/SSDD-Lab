@@ -1,0 +1,649 @@
+/* neon.css - Premium Enhanced Theme */
+:root {
+  --neon-primary: #00f7ff;
+  --neon-secondary: #ff00f7;
+  --neon-accent: #00ff7b;
+  --dark-bg: #0a0a0f;
+  --darker-bg: #05050a;
+  --card-bg: rgba(15, 15, 25, 0.9);
+  --text-primary: #f0f0ff;
+  --text-secondary: #b0b0c0;
+  --glass-effect: rgba(255, 255, 255, 0.05);
+  --transition-speed: 0.4s;
+}
+
+@keyframes gradientPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(0, 247, 255, 0.03) 0%, transparent 25%),
+    radial-gradient(circle at 90% 80%, rgba(255, 0, 247, 0.03) 0%, transparent 25%),
+    linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+/* Premium Header */
+.neon-header {
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(5, 5, 15, 0.95));
+  padding: 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+  box-shadow: 0 5px 30px rgba(0, 247, 255, 0.05);
+  z-index: 100;
+}
+
+.neon-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--neon-primary), 
+    var(--neon-secondary), 
+    transparent);
+  animation: borderGlow 6s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { opacity: 0; background-position: 0% 50%; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; background-position: 100% 50%; }
+}
+
+.glow-text {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.glow-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.neon-header:hover .glow-text::after {
+  transform: scaleX(1);
+}
+
+/* Premium Navigation */
+nav {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.neon-button {
+  position: relative;
+  background: transparent;
+  color: var(--neon-primary);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--neon-primary);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 247, 255, 0.1);
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    rgba(0, 247, 255, 0.1), 
+    rgba(255, 0, 247, 0.1));
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-speed) ease;
+}
+
+.neon-button:hover {
+  color: #0a0a0f;
+  box-shadow: 0 0 20px var(--neon-primary), 0 0 40px rgba(0, 247, 255, 0.2);
+}
+
+.neon-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.neon-button i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.neon-button:hover i {
+  transform: translateX(3px);
+}
+
+/* Main Content */
+.main-container {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Premium Card Design */
+.neon-card {
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.8), rgba(10, 10, 20, 0.9));
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 247, 255, 0) 0%,
+    rgba(0, 247, 255, 0.03) 50%,
+    rgba(0, 247, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.neon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 247, 255, 0.1);
+  border: 1px solid rgba(0, 247, 255, 0.3);
+}
+
+.neon-card:hover::before {
+  transform: rotate(30deg) translate(10%, 10%);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--neon-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-primary), transparent);
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.card-text {
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.rating i {
+  color: gold;
+  font-size: 1.2rem;
+  margin-right: 3px;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-edit, .btn-delete {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+}
+
+.btn-edit:hover {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-delete {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.btn-delete:hover {
+  background: #dc3545;
+  color: white;
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Premium Form Styles */
+.neon-form {
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(15, 15, 25, 0.95));
+  border-radius: 15px;
+  padding: 3rem;
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+}
+
+.form-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+  border-radius: 3px;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: var(--neon-primary);
+  font-size: 1.1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(10, 10, 20, 0.7);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-control:focus {
+  border-color: var(--neon-primary);
+  box-shadow: 0 0 0 3px rgba(0, 247, 255, 0.2);
+  background: rgba(15, 15, 25, 0.9);
+  outline: none;
+}
+
+/* Rating Input */
+.rating-input {
+  position: relative;
+}
+
+.rating-preview {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  display: flex;
+  gap: 5px;
+}
+
+.rating-preview i {
+  color: rgba(255, 215, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rating-preview i.active {
+  color: gold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.rating-preview i:hover {
+  transform: scale(1.2);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Flash Messages */
+.flash-message {
+  padding: 1.2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  border: 1px solid transparent;
+  animation: slideDown 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.flash-message i {
+  font-size: 1.3rem;
+}
+
+.flash-message.success {
+  background: rgba(0, 255, 0, 0.1);
+  border-color: rgba(0, 255, 0, 0.3);
+  color: #00ff00;
+}
+
+.flash-message.error {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.3);
+  color: #ff0000;
+}
+
+.flash-message.info {
+  background: rgba(0, 247, 255, 0.1);
+  border-color: rgba(0, 247, 255, 0.3);
+  color: var(--neon-primary);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: float 4s ease-in-out infinite;
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.7), rgba(15, 15, 25, 0.8));
+  border-radius: 15px;
+  border: 1px dashed rgba(0, 247, 255, 0.3);
+  margin: 2rem 0;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  color: var(--neon-primary);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.empty-state h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--neon-primary);
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.empty-state a {
+  color: var(--neon-accent);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--neon-accent);
+  transition: all var(--transition-speed) ease;
+}
+
+.empty-state a:hover {
+  color: var(--neon-primary);
+  border-bottom-color: var(--neon-primary);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .glow-text {
+    font-size: 2.2rem;
+  }
+  
+  .neon-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 2rem 1rem;
+  }
+  
+  .neon-header {
+    padding: 1rem;
+  }
+  
+  .glow-text {
+    font-size: 1.8rem;
+  }
+  
+  .neon-card, .neon-form {
+    padding: 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .neon-button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-edit, .btn-delete {
+    width: 100%;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Ensure cards don't block pointer events */
+.neon-card {
+  /* Keep all your existing styles */
+  pointer-events: auto; /* Add this line */
+}
+
+/* Fix for action buttons */
+.action-buttons {
+  position: relative; /* Add this */
+  z-index: 2; /* Add this */
+}
+
+/* Make sure buttons are clickable */
+.btn-edit, .btn-delete {
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* Fix for any pseudo-elements that might be blocking clicks */
+.neon-card::before {
+  pointer-events: none; /* Add this */
+}
+
+
+/* Ensure card content is visible */
+.neon-card {
+  /* Keep all existing styles */
+  overflow: visible; /* Change from hidden to visible */
+}
+
+/* Fix content positioning */
+.card-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Adjust button container */
+.review-actions-container {
+  position: relative;
+  z-index: 3;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+/* Keep button styles */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-edit, .btn-delete {
+  /* Keep all existing button styles */
+  pointer-events: auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Adjust card sizing */
+.neon-card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
