@@ -94,11 +94,16 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
    ![Login Screenshot](static/assets/login.png)
 
-    ![base Screenshot](static/assets/base.png)
+   - Base page with a navigation bar at the top for easy and intuitive use.
+
+   ![base Screenshot](static/assets/base.png)
+
 
 ### 2. Add a new book review.
 
    ![Add Review](static/assets/add_book.png)
+
+   ** - Successfully Added Review:**
 
    ![Added Review](static/assets/review_added.png)
 
@@ -106,11 +111,15 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
    ![Edit Review](static/assets/edit.png)
 
+   ** - Successfully Editted:**
+
    ![Edit Successfully](static/assets/edit_successfully.png)
 
 ### 4. Delete the review.
 
    ![Delete Review](static/assets/delete.png)
+
+   ** - Successfully Deleted: **
 
    ![Deleted Successfuly](static/assets/deleted_successfully.png)
 
@@ -120,12 +129,12 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
 ### 6. Try accessing routes like `/session-info` without logging in/out to test session protection.
 
-   **Logged Out:**
+   ** - Logged Out:**
 
    ![Unauthorized Access](static/assets/session_info_LoggedOut.png)
 
-   **Logged In:**
-   
+   ** - Logged In:**
+
    ![Unauthorized Access](static/assets/session_info_LoggedIn.png)
 
 ### 7. Visit a non-existent URL to see the custom error page.
