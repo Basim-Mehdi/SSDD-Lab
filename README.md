@@ -90,35 +90,42 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
 ## 🧪 Testing (Manual)
 
-1. Log in using the default credentials.  
+### 1. Log in using the default credentials.  
+
    ![Login Screenshot](static/assets/login.png)
 
     ![base Screenshot](static/assets/base.png)
 
-2. Add a new book review.  
+### 2. Add a new book review.
+  
    ![Add Review](static/assets/add_book.png)
 
    ![Added Review](static/assets/review_added.png)
 
-3. Edit the review.  
+### 3. Edit the review.
+
    ![Edit Review](static/assets/edit.png)
 
    ![Edit Successfully](static/assets/edit_successfully.png)
 
-4. Delete the review.
+### 4. Delete the review.
+
    ![Delete Review](static/assets/delete.png)
 
    ![Deleted Successfuly](static/assets/deleted_successfully.png)
 
-5. Test invalid inputs for form validation.  
+### 5. Test invalid inputs for form validation.
+
    ![Form Validation](static/assets/formValidation.png)
 
-6. Try accessing routes like `/session-info` without logging in/out to test session protection.  
+### 6. Try accessing routes like `/session-info` without logging in/out to test session protection.
+
    ![Unauthorized Access](static/assets/session_info_LoggedOut.png)
 
    ![Unauthorized Access](static/assets/session_info_LoggedIn.png)
 
-7. Visit a non-existent URL to see the custom error page.  
+### 7. Visit a non-existent URL to see the custom error page.
+
    ![404 not found ](static/assets/error.png)
 
 ---
@@ -172,7 +179,7 @@ book-review-system/
 ---
 
 
-## 🙌 Credits
+##  Credits
 
 Developed by **Failures**.
 Feel free to contribute or raise issues to improve the project!
