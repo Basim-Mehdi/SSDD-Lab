@@ -97,7 +97,7 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
     ![base Screenshot](static/assets/base.png)
 
 ### 2. Add a new book review.
-  
+
    ![Add Review](static/assets/add_book.png)
 
    ![Added Review](static/assets/review_added.png)
@@ -179,10 +179,15 @@ book-review-system/
 ---
 
 
-##  Credits
+## 💡 Credits
 
-Developed by **Failures**.
-Feel free to contribute or raise issues to improve the project!
+**👨‍💻 Developed by:**
+
+- [**Basim Mehdi**](https://github.com/Basim-Mehdi)
+- [**Shaheer Sheri**](https://github.com/Shaheer-Sheri)
+- [**Khattak761**](https://github.com/Khattak761)
+
+
 
 
 
