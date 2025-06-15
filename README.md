@@ -103,7 +103,7 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
    ![Add Review](static/assets/add_book.png)
 
-   ** - Successfully Added Review:**
+   - Successfully Added Review:
 
    ![Added Review](static/assets/review_added.png)
 
@@ -111,7 +111,7 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
    ![Edit Review](static/assets/edit.png)
 
-   ** - Successfully Editted:**
+   - Successfully Editted:
 
    ![Edit Successfully](static/assets/edit_successfully.png)
 
@@ -119,7 +119,7 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
    ![Delete Review](static/assets/delete.png)
 
-   ** - Successfully Deleted: **
+   - Successfully Deleted: 
 
    ![Deleted Successfuly](static/assets/deleted_successfully.png)
 
@@ -129,11 +129,11 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
 ### 6. Try accessing routes like `/session-info` without logging in/out to test session protection.
 
-   ** - Logged Out:**
+   - Logged Out:
 
    ![Unauthorized Access](static/assets/session_info_LoggedOut.png)
 
-   ** - Logged In:**
+   - Logged In:
 
    ![Unauthorized Access](static/assets/session_info_LoggedIn.png)
 
