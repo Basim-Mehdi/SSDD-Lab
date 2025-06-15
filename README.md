@@ -120,8 +120,12 @@ Ensure `app.secret_key` is securely set inside `app.py` or via environment varia
 
 ### 6. Try accessing routes like `/session-info` without logging in/out to test session protection.
 
+   **Logged Out:**
+
    ![Unauthorized Access](static/assets/session_info_LoggedOut.png)
 
+   **Logged In:**
+   
    ![Unauthorized Access](static/assets/session_info_LoggedIn.png)
 
 ### 7. Visit a non-existent URL to see the custom error page.
